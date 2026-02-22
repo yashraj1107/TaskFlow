@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-surface-950 text-surface-100 font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-dark text-white font-medium px-4 py-2 rounded-lg transition-all duration-150 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply text-surface-400 hover:text-surface-100 hover:bg-surface-800 font-medium px-3 py-2 rounded-lg transition-all duration-150 active:scale-95;
+  }
+
+  .input {
+    @apply bg-surface-800 border border-surface-700 rounded-lg px-3 py-2 text-surface-100 placeholder-surface-500 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-150 w-full;
+  }
+
+  .card-item {
+    @apply bg-surface-800 border border-surface-700 rounded-xl p-3 shadow-card hover:shadow-card-hover hover:border-surface-600 transition-all duration-150 cursor-grab active:cursor-grabbing;
+  }
+
+  .list-column {
+    @apply bg-surface-900 border border-surface-800 rounded-xl flex flex-col;
+    width: 300px;
+    min-width: 300px;
+    max-height: calc(100vh - 140px);
+  }
+
+  .drag-overlay {
+    @apply shadow-card-drag rotate-2 scale-105 opacity-95;
+  }
+}
+
+/* Smooth drag animations */
+.sortable-item {
+  transition: transform 200ms ease;
+}
+
+/* Animated placeholder for drag-over zones */
+.drop-indicator {
+  @apply h-1 bg-accent/60 rounded-full mx-2 my-1 transition-all duration-150;
+}

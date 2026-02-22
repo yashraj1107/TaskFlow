@@ -199,6 +199,3 @@ npm run dev
 ```
 
 ---
-<div align="center">
-  <i>Built with ❤️ for scalable, snappy project management architectures.</i>
-</div>
